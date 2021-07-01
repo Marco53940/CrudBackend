@@ -27,6 +27,11 @@ public class Controlador {
         return service.listarId(id);
     }
 
+    @PostMapping("/buscar")
+    public Persona buscar(@RequestBody Persona p) {
+        return service.buscarPorDocumento(p.getNumeroDocumento(), p.getTipoDocumento());
+    }
+
     @PutMapping(path = {"/{id}"})
     public Persona editar(@RequestBody Persona p, @PathVariable("id") long id) {
         p.setIdPersona(id);

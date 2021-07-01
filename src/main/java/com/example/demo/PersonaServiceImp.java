@@ -22,6 +22,10 @@ public class PersonaServiceImp implements PersonaService{
     public Persona listarId(long id) {
         return repositorio.findOne(id);
     }
+    @Override
+    public Persona buscarPorDocumento (long numeroDocumento, String tipoDocumento){
+        return repositorio.findByDocumento(numeroDocumento, tipoDocumento);
+    }
 
     @Override
     public Persona add(Persona p) {
